@@ -1,3 +1,9 @@
 [submodule "frontend"]
 	path = frontend
 	url = git@github.com:task-management-system/frontend.git
+[submodule "C:\\Docs\\tms\\backend"]
+	path = C:\\Docs\\tms\\backend
+	url = git@github.com:task-management-system/backend.git
+[submodule "C:\\Docs\\tms\\mail-service"]
+	path = C:\\Docs\\tms\\mail-service
+	url = git@github.com:task-management-system/mail-service.git
