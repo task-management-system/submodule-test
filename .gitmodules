@@ -1,5 +1,5 @@
-[submodule "tms"]
-	path = tms
+[submodule "backend"]
+	path = backend
 	url = git@github.com:task-management-system/backend.git
 [submodule "frontend"]
 	path = frontend
