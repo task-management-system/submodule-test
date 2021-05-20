@@ -2,7 +2,7 @@
 	path = frontend
 	url = git@github.com:task-management-system/frontend.git
 [submodule "backend"]
-	path = "backend
+	path = backend
 	url = git@github.com:task-management-system/backend.git
 [submodule "mail-service"]
 	path = mail-service
