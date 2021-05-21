@@ -1,9 +1,12 @@
 [submodule "frontend"]
 	path = frontend
 	url = git@github.com:task-management-system/frontend.git
+	branch = main
 [submodule "backend"]
 	path = backend
 	url = git@github.com:task-management-system/backend.git
+	branch = dev
 [submodule "mail-service"]
 	path = mail-service
 	url = git@github.com:task-management-system/mail-service.git
+	branch = main
