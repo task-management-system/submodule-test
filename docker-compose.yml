@@ -54,53 +54,51 @@ services:
     networks:
       - tms-network
 
-  # А как это гавно поднять?
-  tms-nginx:
-    container_name: tms-nginx
-    build:
-      context: frontend/.
-    restart: always
-    env_file:
-      - .env
-    ports:
-      - 7500:80
-    expose:
-      - 80
-      - 443:443
-    volumes:
-      - web-root:/var/www/html
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - ./nginx:/etc/nginx/conf.d
-    depends_on:
-      - tms-backend
-    networks:
-      - tms-network
+#   А как это гавно поднять?
+#   tms-nginx:
+#     container_name: tms-nginx
+#     build:
+#       context: frontend/.
+#     restart: always
+#     env_file:
+#       - .env
+#     expose:
+#       - 80
+#       - 443:443
+#     volumes:
+#       - web-root:/var/www/html
+#       - certbot-etc:/etc/letsencrypt
+#       - certbot-var:/var/lib/letsencrypt
+#       - ./nginx:/etc/nginx/conf.d
+#     depends_on:
+#       - tms-backend
+#     networks:
+#       - tms-network
 
-  # Для чего сертбот в контейнере?
-  # tms-certbot:
-  #   image: certbot/certbot
-  #   container_name: tms-certbot
-  #   volumes:
-  #     - certbot-etc:/etc/letsencrypt
-  #     - certbot-var:/var/lib/letsencrypt
-  #     - web-root:/var/www/html
-  #   depends_on:
-  #     - tms-nginx
-  #   command: certonly --webroot --webroot-path=/var/www/html --force-renewal --email seasle98@gmail.com -d seasky.space, www.seasky.space --agree-tos
+#   Для чего сертбот в контейнере?
+#   tms-certbot:
+#     image: certbot/certbot
+#     container_name: tms-certbot
+#     volumes:
+#       - certbot-etc:/etc/letsencrypt
+#       - certbot-var:/var/lib/letsencrypt
+#       - web-root:/var/www/html
+#     depends_on:
+#       - tms-nginx
+#     command: certonly --webroot --webroot-path=/var/www/html --force-renewal --email seasle98@gmail.com -d seasky.space, www.seasky.space --agree-tos
 
 volumes:
   tms-volume:
     name: tms-volume
     driver: local
-  # certbot-etc:
-  # certbot-var:
-  web-root:
-    driver: local
-    driver_opts:
-      type: none
-      device: /root/frontend/build
-      o: bind
+#   certbot-etc:
+#   certbot-var:
+#   web-root:
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: /root/frontend/build
+#       o: bind
 
 networks:
   tms-network:
